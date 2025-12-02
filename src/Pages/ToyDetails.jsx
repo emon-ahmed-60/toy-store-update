@@ -6,7 +6,7 @@ import { AuthContext } from '../Context/AuthContext';
 
 const ToyDetails = () => {
   const {user} = use(AuthContext);
-  console.log(user);
+
 
     const {id} = useParams();
     const {datas,loading} = useCustomData();
@@ -19,7 +19,7 @@ const ToyDetails = () => {
       const name = e.target.name.value;
       const email = e.target.email.value;
 
-      console.log(name,email);
+   
       toast.success("form submitted")
     }
 

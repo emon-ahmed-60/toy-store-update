@@ -9,6 +9,7 @@ const AuthProvider = ({children}) => {
 
     const [user,setUser] = useState(null);
     const [loading,setLoading] = useState(true);
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
     const createUser = (email,password) => {
         setLoading(true)
@@ -41,13 +42,13 @@ const AuthProvider = ({children}) => {
 
     useEffect(()=>{
        const unsubscribe = onAuthStateChanged(auth,(currentUser) => {
-        console.log(currentUser);
+        
             setUser(currentUser);
             setLoading(false)
         })
         return ()=>unsubscribe();
     },[])
-console.log(user);
+
     const authInfo = {
         googleSignIn,
         createUser,
@@ -56,6 +57,8 @@ console.log(user);
         updateUserProfile,
         logOut,
         setLoading,
+        setTheme,
+        theme,
         user,
         loading
     }

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../Context/AuthContext";
 
 const EachCard = ({ data }) => {
+  const {theme} = use(AuthContext)
   const { toyName, pictureURL, rating, availableQuantity, price, toyId } = data;
   return (
     <div>
-      <div className="card bg-base-100 shadow-sm">
+      <div className={`card bg-base-100 shadow-sm text-[#343A40] ${theme === 'dark' && 'text-white'}`}>
         <figure>
           <img
             className="w-full max-h-48 object-cover"

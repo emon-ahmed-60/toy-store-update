@@ -10,6 +10,9 @@ import LoginPage from "../Pages/LoginPage";
 import RegisterPage from "../Pages/RegisterPage";
 import PrivateRoutes from "./PrivateRoutes";
 import ForgotPassword from "../Pages/ForgotPassword";
+import AllToys from "../Pages/AllToys";
+import AboutUs from "../Pages/AboutUs";
+import ContactUs from "../Pages/ContactUs";
 
 
 const router = createBrowserRouter([
@@ -35,7 +38,19 @@ const router = createBrowserRouter([
             },
             {
                 path:"/upcoming-toys",
-                element:<PrivateRoutes> <NewArrival/> </PrivateRoutes>
+                element: <NewArrival/> 
+            },
+            {
+                path:"/about-us",
+                Component:AboutUs
+            },
+            {
+                path:"/contact-us",
+                Component:ContactUs
+            },
+            {
+                path:"/all-toys",
+                Component:AllToys
             },
             {
                 path:"/reset-password",
@@ -43,7 +58,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/toy-detail/:id',
-                element: <PrivateRoutes> <ToyDetails/> </PrivateRoutes>
+                element:  <ToyDetails/> 
             }
         ]
     },

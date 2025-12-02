@@ -9,11 +9,11 @@ const ForgotPassword = () => {
     const location = useLocation();
     const { email } = location.state || {};
 
-    console.log(user?.email);
+    
     const handleForgotPassword = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
-        console.log(email);
+        
         forgotPassword(email).then(()=>{
             toast.success("password reset please check your email")
             window.open("https://mail.google.com", "_blank");
