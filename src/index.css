@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+nav li a.active {
+    @apply underline text-purple-400
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+  opacity: 0;
+}
+
+::placeholder {
+  color: #888; 
+  font-size: 14px; 
+}
